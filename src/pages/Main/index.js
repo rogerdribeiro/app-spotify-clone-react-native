@@ -276,14 +276,16 @@ const albums = [
   },
 ];
 
-const Main = () => (
+const Main = ({ navigation }) => (
   <View style={styles.container}>
     <StatusBar backgroundColor={colors.secundary} />
 
     <FlatList
       data={albums}
       keyExtractor={album => String(album.id)}
-      renderItem={({ item }) => <AlbumItem album={item} />}
+      renderItem={({ item }) => (
+        <AlbumItem onPress={() => navigation.navigate('Album', { album: item })} album={item} />
+      )}
     />
   </View>
 );
