@@ -16,13 +16,12 @@ export default function albums(state = INITIAL_STATE, action) {
       return { ...state, loading: true };
     case Types.GET_SUCCESS:
       return {
-        ...state,
         data: action.payload.data,
         loading: false,
         error: null,
       };
     case Types.GET_FAILURE:
-      return { ...state, error: action.payload.error };
+      return { ...state, error: action.payload.error, loading: false };
 
     default:
       return state;
@@ -30,15 +29,15 @@ export default function albums(state = INITIAL_STATE, action) {
 }
 
 export const Creators = {
-  getAlbumRequest: () => ({
+  getAlbumsRequest: () => ({
     type: Types.GET_REQUEST,
   }),
-  getAlbumSuccess: data => ({
+  getAlbumsSuccess: data => ({
     type: Types.GET_SUCCESS,
-    action: { data },
+    payload: { data },
   }),
-  getAlbumFailure: error => ({
-    type: Types.GET_REQUEST,
-    action: { error },
+  getAlbumsFailure: error => ({
+    type: Types.GET_FAILURE,
+    payload: { error },
   }),
 };
