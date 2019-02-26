@@ -6,7 +6,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Creators as PlayerActions } from '../../store/ducks/player';
 import styles from './styles';
 
-const Player = ({ player, pause, play }) => {
+const Player = ({
+  player, pause, play, next, prev,
+}) => {
   if (player.currentSong.id === undefined) return null;
 
   const pressFunction = player.paused ? play : pause;
@@ -20,13 +22,13 @@ const Player = ({ player, pause, play }) => {
       </View>
 
       <View style={styles.controls}>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={prev}>
           <Icon name="skip-previous" size={24} style={styles.controlIcon} />
         </TouchableOpacity>
         <TouchableOpacity onPress={pressFunction} style={styles.play}>
           <Icon name={icon} size={36} style={styles.controlIcon} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={next}>
           <Icon name="skip-next" size={24} style={styles.controlIcon} />
         </TouchableOpacity>
       </View>

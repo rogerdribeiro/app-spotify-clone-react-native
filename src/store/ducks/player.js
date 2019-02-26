@@ -6,6 +6,8 @@ export const Types = {
   SET_SONG_FAILURE: 'player/SET_SONG_FAILURE',
   PLAY: 'player/PLAY',
   PAUSE: 'player/PAUSE',
+  NEXT: 'player/NEXT',
+  PREV: 'player/PREV',
 };
 
 const INITIAL_STATE = Immutable({
@@ -13,6 +15,7 @@ const INITIAL_STATE = Immutable({
   loadingId: null,
   error: null,
   paused: false,
+  list: [],
 });
 
 export default function player(state = INITIAL_STATE, action) {
@@ -22,6 +25,7 @@ export default function player(state = INITIAL_STATE, action) {
     case Types.SET_SONG_SUCCESS:
       return {
         ...state,
+        list: action.payload.list,
         paused: false,
         loadingId: null,
         currentSong: action.payload.song,
@@ -39,13 +43,13 @@ export default function player(state = INITIAL_STATE, action) {
 }
 
 export const Creators = {
-  setSongRequest: song => ({
+  setSongRequest: (song, list) => ({
     type: Types.SET_SONG_REQUEST,
-    payload: { song },
+    payload: { song, list },
   }),
-  setSongSuccess: song => ({
+  setSongSuccess: (song, list) => ({
     type: Types.SET_SONG_SUCCESS,
-    payload: { song },
+    payload: { song, list },
   }),
   setSongFailure: error => ({
     type: Types.SET_SONG_FAILURE,
@@ -56,5 +60,11 @@ export const Creators = {
   }),
   pause: () => ({
     type: Types.PAUSE,
+  }),
+  next: () => ({
+    type: Types.NEXT,
+  }),
+  prev: () => ({
+    type: Types.PREV,
   }),
 };
