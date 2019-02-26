@@ -7,19 +7,23 @@ export const Types = {
 };
 
 const INITIAL_STATE = Immutable({
-  currentSong: null,
+  currentSong: {},
+  loadingId: null,
+  error: null,
 });
 
 export default function search(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Types.SET_SONG_REQUEST:
-      return { ...state };
+      return { ...state, loadingId: action.payload.song.id };
     case Types.SET_SONG_SUCCESS:
       return {
         ...state,
+        loadingId: null,
+        currentSong: action.payload.song,
       };
     case Types.SET_SONG_FAILURE:
-      return { ...state };
+      return { ...state, error: action.payload.error, loadingId: null };
 
     default:
       return state;

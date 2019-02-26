@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
   play: {
     color: colors.regular,
   },
+  active: {
+    color: colors.active,
+  },
 });
 
 export default styles;
