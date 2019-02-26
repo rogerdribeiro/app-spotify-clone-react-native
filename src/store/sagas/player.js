@@ -12,6 +12,13 @@ export function* play() {
     yield put(PlayerActions.setSongFailure(err.message));
   }
 }
+export function* pause() {
+  try {
+    yield call(Sound.pause);
+  } catch (err) {
+    yield put(PlayerActions.setSongFailure(err.message));
+  }
+}
 
 export function* setSong(action) {
   try {
