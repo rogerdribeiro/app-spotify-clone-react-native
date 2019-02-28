@@ -12,5 +12,8 @@
 </ul>
 
 <img src="buscar-musica.jpeg" height="400px" >
+<img src="listar-albums.jpeg" height="400px" >
+<img src="mostrar-album.jpeg" height="400px" >
+
 
 
