@@ -1,13 +1,16 @@
 # app-spotify-clone-react-native
 
-Spotify clone com as seguintes funcionalidades
--> Lista de albums
--> Lista de musicas do album
--> Lista de músicas
--> Pesquisar por uma música
--> Tocar, pausar uma musica
--> Mudar para música seguinte/anterior
+<h1>Spotify clone com as seguintes funcionalidades</h1>
 
-![Screenshot](buscar-musica.jpeg)
+<ul>
+     <li>Lista de albums</li>
+    <li>Lista de musicas de um album</li>
+    <li>Lista de músicas</li>
+    <li>Pesquisar por uma música</li>
+    <li>Tocar, pausar uma musica</li>
+    <li>Mudar para música seguinte/anterior</li>
+</ul>
+
+<img src="buscar-musica.jpeg" height="400px" >
 
 
