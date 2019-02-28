@@ -1,6 +1,6 @@
 # app-spotify-clone-react-native
 
-<h1>Spotify clone com as seguintes funcionalidades</h1>
+<h1>Spotify clone</h1>
 
 <ul>
      <li>Lista de albums</li>
