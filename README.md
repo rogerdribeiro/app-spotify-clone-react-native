@@ -11,9 +11,11 @@
     <li>Mudar para música seguinte/anterior</li>
 </ul>
 
-<img src="buscar-musica.jpeg" height="400px" >
-<img src="listar-albums.jpeg" height="400px" >
-<img src="mostrar-album.jpeg" height="400px" >
+<div style="display: flex; flex-direction: row;">
+     <img src="buscar-musica.jpeg" height="400px" >
+     <img src="Listar-albums.jpeg" height="400px" >
+     <img src="mostrar-album.jpeg" height="400px" >
+</div>
 
 
 
